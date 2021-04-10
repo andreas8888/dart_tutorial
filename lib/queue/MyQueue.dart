@@ -75,5 +75,46 @@ class MyQueue<T> implements IQueue<T>{
   @override
   int size() {
     return _size;
-  } 
+  }
+
+  @override
+  T getElement(int index) {
+    try{
+        if(_head.getNext() == null || index >= _size){
+        return null;
+      }
+      
+      //Iterator löser detta men har inte förståt hur man implemterar dem i Dart
+      Node head = _head;
+      for(int i = 0; i < index; i++){
+        head = head.getNext();
+      }
+
+      return head.getData();
+    }
+    catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+  
+  @override
+  int indexOf(T element) {
+    Node head = _head;
+    try{
+      for(int i = 0; i < _size; i++){
+        if(head.getData() == element){ //finns ingen equals i dart?!?!
+          return i;
+        }
+        head = head.getNext();
+      }
+      return -1;
+    }
+    catch(e){
+      print(e.toString());
+      return -1;
+    }
+  }
+
+  //TODO : en iterator vore mer optimalt,
 }

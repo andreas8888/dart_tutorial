@@ -8,4 +8,7 @@ abstract class IQueue<T>{
   T dequeue();
   T first();
   T last();
+  //dessa flyttas till min andra special interface för collections
+  int indexOf(T element);
+  T getElement(int index);
 }

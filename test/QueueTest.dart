@@ -80,7 +80,7 @@ void main() {
   test('Exception first: Kontrollera att exceptions kastas (IndexOutOfBoundsException)', (){
     bool crash = false;
     try{
-      MyQueue queue = new MyQueue();
+      MyQueue queue = MyQueue();
       queue.first();
     }catch(e){
       crash = true;
@@ -91,7 +91,7 @@ void main() {
   test('Exception last: Kontrollera att exceptions kastas (IndexOutOfBoundsException)', (){
     bool crash = false;
     try{
-      MyQueue queue = new MyQueue();
+      MyQueue queue = MyQueue();
       queue.last();
     }catch(e){
       crash = true;
@@ -114,5 +114,26 @@ void main() {
     expect(crash, true);
   });
 
-  //TODO: mer test
+  test('indexOf() : testa plocka ur index i kön', (){
+    MyQueue<String> nameQueue = createTestDataNameQueue();
+    expect(nameQueue.indexOf('Andreas'), 0);
+    expect(nameQueue.indexOf('Regardie'), 2);
+  });
+
+  test('indexOf() : testa felaktig input', (){
+    MyQueue<String> nameQueue = createTestDataNameQueue();
+    expect(nameQueue.indexOf('Orvar'), -1);
+  });
+
+  test('getElement() : testa plocka fram ett element med hjälp av index', (){
+    MyQueue<String> nameQueue = createTestDataNameQueue();
+    expect(nameQueue.getElement(1), 'Melina');
+    expect(nameQueue.getElement(0), 'Andreas');
+    expect(nameQueue.getElement(2), 'Regardie');
+  });
+
+  test('getElement() : testa exception hantering', (){
+    MyQueue<String> nameQueue = createTestDataNameQueue();
+    expect(nameQueue.getElement(3), null);
+  });
 }
