@@ -89,7 +89,6 @@ class MyQueue<T> implements IQueue<T>{
       for(int i = 0; i < index; i++){
         head = head.getNext();
       }
-
       return head.getData();
     }
     catch(e){
