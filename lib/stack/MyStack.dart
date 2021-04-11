@@ -12,8 +12,8 @@ class MyStack<T> extends AbstractCollection<T> implements IStack<T>{
   ///visa senast tillagda elementet.
   @override
   T peek() {
-    if(checkIndex(size()-1, size())){ //för kursens skull,..
-      return getValue(size()-1);
+    if(checkIndex(size(), size()+1)){ //för kursens skull,..
+      return getValue(size());
     }
     else{
        throw Exception('pop() : IndexOutOfBoundsException');
@@ -23,8 +23,8 @@ class MyStack<T> extends AbstractCollection<T> implements IStack<T>{
   ///visa senast tillagda elementet. sen ta bort
   @override
   T pop() {
-    if(checkIndex(size()-1, size())){ //för kursens skull,..
-      T value = getValue(size()-1);
+    if(checkIndex(size(), size()+1)){ //för kursens skull,..
+      T value = getValue(size());
       removeValue(value);
       return value;
     }

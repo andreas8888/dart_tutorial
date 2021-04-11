@@ -41,6 +41,7 @@ void main() {
     expect(stack.pop(), 'Regardie');
     expect(stack.peek(), 'Melina');
     expect(stack.pop(), 'Melina');
+    expect(stack.size(), 0);
   });
   
   test('peek() : Crash out of bounds', () {
@@ -71,7 +72,7 @@ void main() {
 
   test('size()', () {
     MyStack stack = createDummyStack();
-    expect(stack.size(), 3);
+    expect(stack.size(), 2);
   });
   
   test('isEmpty()', () {
@@ -84,5 +85,22 @@ void main() {
   test('toString()', () {
     MyStack stack = createDummyStack();
     expect(stack.myToString(), 'Andreas,Melina,Regardie');
+  });
+
+  test('indexOf()', () {
+    MyStack stack = createDummyStack();
+    expect(stack.indexOf('Melina'), 1);
+  });
+
+  test('indexOf() : crash', () {
+    MyStack stack = MyStack();
+    bool crash = false;
+    try{
+      stack.push('testarn');
+      expect(stack.indexOf('Melina'), 1);
+    }catch(e){
+      crash = true;
+    }
+    expect(crash, true);
   });
 }
