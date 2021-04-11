@@ -1,6 +1,6 @@
 
 
-import 'package:dart_tutorial/stack/AbstractCollection.dart';
+import 'package:dart_tutorial/AbstractCollection.dart';
 import 'package:dart_tutorial/stack/IStack.dart';
 
 class MyStack<T> extends AbstractCollection<T> implements IStack<T>{

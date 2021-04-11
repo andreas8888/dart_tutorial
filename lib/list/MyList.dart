@@ -1,4 +1,4 @@
-import 'package:dart_tutorial/stack/AbstractCollection.dart';
+import 'package:dart_tutorial/AbstractCollection.dart';
 import 'package:dart_tutorial/list/IList.dart';
 
 class MyList<T> extends AbstractCollection<T> implements IList<T>{
