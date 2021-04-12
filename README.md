@@ -1,6 +1,13 @@
 # Dart träning.
 
-bekanta mig med dart programmeringsspråk genom att implementera elemntära algoritmer och datastrukturer
+bekanta mig med dart programmeringsspråk genom att implementera elemntära algoritmer och datastrukturer.
+
+###innehåll
+lib: datastrukturer och implementering.
+test: 90% täckning på samtliga filer. 
+
+
+
 
 A sample command-line application with an entrypoint in `bin/`, library code
 in `lib/`, and example unit test in `test/`.
