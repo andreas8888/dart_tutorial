@@ -1,6 +1,6 @@
 # Dart träning.
 
-bekanta mig med dart programmeringsspråk genom att implementera elemntära algoritmer och datastrukturer.
+bekanta mig med dart programmeringsspråk genom att implementera elementära algoritmer och datastrukturer.
 
 ## Innehåll
 
